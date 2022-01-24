@@ -6,12 +6,13 @@ import (
 )
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	// fmt.Fprint(w, "请求路径为："+r.URL.Path)
 
 	if r.URL.Path == "/" {
 		fmt.Fprint(w, "<h1>Hello, 这里是111222221111 goblog</h1>")
 	} else if r.URL.Path == "/about" {
+
 		fmt.Fprint(w, "此博客是用以记录编程笔记，如您有反馈或建议，请联系 "+
 			"<a href=\"mailto:summer@example.com\">summer@example.com</a>")
 	} else {
